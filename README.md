@@ -19,15 +19,15 @@ Installation
 Installation is simple:
 
 1. Clone MSK git-repository in your Emacs config dir
-```
-$ cd ~/.emacs.d
-$ git clone https://github.com/deterok/msk.git msk
-```
+
+        $ cd ~/.emacs.d
+        $ git clone https://github.com/deterok/msk.git msk
+
 2. Add the following code in the emacs init file (usually ~/.emacs.d/init.el)
-```lisp
-(add-to-list 'load-path "~/.emacs.d/msk/")
-(require 'msk)
-```
+
+        (add-to-list 'load-path "~/.emacs.d/msk/")
+        (require 'msk)
+
 3. Rerun emacs (Maybe a few times. There may be problems with the hash-sums.
 I am in the process of finding solutions)
 
