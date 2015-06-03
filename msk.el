@@ -11,7 +11,7 @@
 (defvar msk-mods-dir    (msk/concat-path msk-dir "mods")
   "Директория по-умолчанию для модов")
 
-(defvar msk-mods-list  `(("base" ,msk-dir) "python")
+(defvar msk-mods-list  `(("base" ,msk-dir))
   "Список всех модов, которые буду активированы. Сохраняется порядок
   активации")
 
