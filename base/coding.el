@@ -62,3 +62,13 @@
   (add-hook 'before-save-hook 'delete-trailing-whitespace))
 
 (add-hook 'text-mode-hook (lambda () auto-fill-mode t))
+
+;;Классная система подскок в минебуфере для ELisp языков
+;;После ввода очередного слова-названии функции выводит ее сигнатуру в минибуфер
+(progn
+  (defun turn-on-eldoc ()
+    (eldoc-mode t))
+
+  (add-hook 'emacs-lisp-mode-hook #'turn-on-eldoc-mode)
+  (add-hook 'lisp-interaction-mode-hook #'turn-on-eldoc-mode)
+  (add-hook 'ielm-mode-hook #'turn-on-eldoc-mode))
