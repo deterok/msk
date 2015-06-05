@@ -1,0 +1,6 @@
+(:name smart-tab-company
+       :description "Intelligent tab completion and indentation with support companymod."
+       :type github
+       :pkgname "Wilfred/smart-tab"
+       :branch  "company-and-eol"
+       :features smart-tab)

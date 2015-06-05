@@ -1,6 +1,9 @@
 (print "MSK Запускается")
 (load "utils" nil t nil t)
 
+(defconst msk-version "1.0.0"
+  "Версия пакета msk")
+
 ;; Объявление стандартных путей
 (defvar msk-dir         (file-name-directory load-file-name)
   "Центральная директория набора")
@@ -26,4 +29,7 @@
 (msk/load-mods msk-mods-list)
 
 (print "Все!  MSK запущен!")
+
+(set-buffer "*scratch*")
+(delete-other-windows)
 (provide 'msk)
