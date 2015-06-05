@@ -10,6 +10,8 @@
     (eval-print-last-sexp)
     (kill-buffer "*el-get bootstrap*")))
 
+(add-to-list 'el-get-recipe-path (msk/concat-path msk-dir "recipes"))
+
 (require 'el-get-elpa)
 (set-default 'package-user-dir
              (msk/concat-path msk-cache-dir "elpa"))
