@@ -34,6 +34,7 @@
   (global-smart-tab-mode t)
 
   (require 'yasnippet)
+  (set-default 'yas-verbosity 1)
   (yas-global-mode t)
 
   (defvar company-mode/enable-yas t
