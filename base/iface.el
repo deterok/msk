@@ -87,7 +87,11 @@
 
   (msk/create-dir-if-not-exist custom-theme-directory)
 
-  (unless (load-theme 'smyx t)
-    (url-copy-file
-     "https://raw.githubusercontent.com/tacit7/smyx/master/smyx-theme.el"
-     (msk/concat-path custom-theme-directory "smyx-theme.el") t)))
+  (unless (condition-case nil
+              (load-theme 'smyx t)
+            (error nil))
+    (progn
+      (url-copy-file
+       "https://raw.githubusercontent.com/tacit7/smyx/master/smyx-theme.el"
+       (msk/concat-path custom-theme-directory "smyx-theme.el") t)
+      (load-theme 'smyx t))))
