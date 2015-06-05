@@ -26,4 +26,7 @@
 (msk/load-mods msk-mods-list)
 
 (print "Все!  MSK запущен!")
+
+(set-buffer "*scratch*")
+(delete-other-windows)
 (provide 'msk)
