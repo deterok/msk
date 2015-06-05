@@ -16,3 +16,6 @@
 
 (unless (file-directory-p el-get-recipe-path-elpa)
   (el-get-elpa-build-local-recipes))
+
+(add-to-list 'el-get-recipe-path
+	     (msk/concat-path msk-dir "recipes"))
