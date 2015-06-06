@@ -1,9 +1,11 @@
 (msk/require-pkgs '(anaconda-mode
-                    company-anaconda))
+                    company-anaconda
+                    pyvenv))
 
 (msk/add-company-backend 'company-anaconda)
 (add-hook 'python-mode-hook #'anaconda-mode)
 (add-hook 'python-mode-hook #'eldoc-mode)
+(add-hook 'python-mode-hook #'pyvenv-mode)
 
 
 (setq-default
