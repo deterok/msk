@@ -4,6 +4,7 @@
                     company
                     smart-tab-company
                     yasnippet
+                    ;; auto-highlight-symbol
                     ))
 
 (set-default 'indent-tabs-mode nil)
@@ -19,6 +20,9 @@
 
 (require 'highlight-parentheses)
 (global-highlight-parentheses-mode t)
+
+;; (require 'auto-highlight-symbol)
+;; (global-auto-highlight-symbol-mode t)
 
 (require'multiple-cursors)
 (set-default 'mc/list-file (msk/concat-path msk-cache-dir "mc-list.el"))
