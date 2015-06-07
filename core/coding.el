@@ -26,10 +26,10 @@
 
 (require'multiple-cursors)
 (set-default 'mc/list-file (msk/concat-path msk-cache-dir "mc-list.el"))
+(add-hook 'prog-mode-hook #'multiple-cursors-mode)
 
 ;;Масштабная система автодополнения кода/текста
 (progn
-
   (require 'company)
   (global-company-mode t)
 
