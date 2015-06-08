@@ -3,9 +3,14 @@
                     virtualenvwrapper))
 
 
-(msk/add-company-backend 'company-anaconda)
-(add-hook 'python-mode-hook #'anaconda-mode)
-(add-hook 'python-mode-hook #'eldoc-mode)
+
+(progn
+  (require 'anaconda-mode)
+  (require 'company-anaconda)
+  (require 'eldoc)
+  (msk/add-company-backend 'company-anaconda)
+  (add-hook 'python-mode-hook #'anaconda-mode)
+  (add-hook 'python-mode-hook #'eldoc-mode))
 
 
 (setq-default
