@@ -4,6 +4,7 @@
                     company
                     smart-tab-company
                     yasnippet
+                    ;; auto-highlight-symbol
                     ))
 
 (set-default 'indent-tabs-mode nil)
@@ -20,12 +21,15 @@
 (require 'highlight-parentheses)
 (global-highlight-parentheses-mode t)
 
+;; (require 'auto-highlight-symbol)
+;; (global-auto-highlight-symbol-mode t)
+
 (require'multiple-cursors)
 (set-default 'mc/list-file (msk/concat-path msk-cache-dir "mc-list.el"))
+(add-hook 'prog-mode-hook #'multiple-cursors-mode)
 
 ;;Масштабная система автодополнения кода/текста
 (progn
-
   (require 'company)
   (global-company-mode t)
 
@@ -62,7 +66,8 @@
   (global-whitespace-mode t)
   (add-hook 'before-save-hook 'delete-trailing-whitespace))
 
-(add-hook 'text-mode-hook (lambda () auto-fill-mode t))
+
+(add-hook 'text-mode-hook  #'auto-fill-mode t)
 
 ;;Классная система подскок в минебуфере для ELisp языков
 ;;После ввода очередного слова-названии функции выводит ее сигнатуру в минибуфер
@@ -71,5 +76,4 @@
     (eldoc-mode t))
 
   (add-hook 'emacs-lisp-mode-hook #'turn-on-eldoc-mode)
-  (add-hook 'lisp-interaction-mode-hook #'turn-on-eldoc-mode)
-  (add-hook 'ielm-mode-hook #'turn-on-eldoc-mode))
+  (add-hook 'lisp-interaction-mode-hook #'turn-on-eldoc-mode))

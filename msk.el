@@ -1,7 +1,7 @@
 (print "MSK Запускается")
 (load "utils" nil t nil t)
 
-(defconst msk-version "1.0.0"
+(defconst msk-version "1.0.2"
   "Версия пакета msk")
 
 ;; Объявление стандартных путей
@@ -14,7 +14,7 @@
 (defvar msk-mods-dir    (msk/concat-path msk-dir "mods")
   "Директория по-умолчанию для модов")
 
-(defvar msk-mods-list  `(("base" ,msk-dir))
+(defvar msk-mods-list  `(("core" ,msk-dir))
   "Список всех модов, которые буду активированы. Сохраняется порядок
   активации")
 
