@@ -28,3 +28,11 @@
 
 (define-key anaconda-mode-map (kbd "M-.")'anaconda-mode-goto)
 (define-key anaconda-mode-map (kbd "M-,") 'anaconda-nav-pop-marker)
+
+
+(defun python-shell-send-buffer-with-main ()
+  (interactive)
+  (python-shell-send-buffer t))
+
+
+(define-key anaconda-mode-map (kbd "C-c C-e") 'python-shell-send-buffer-with-main)
