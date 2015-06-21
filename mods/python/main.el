@@ -26,7 +26,7 @@
  "';'.join(get_ipython().Completer.all_completions('''%s'''))\n")
 
 
-(define-key anaconda-mode-map (kbd "M-.")'anaconda-mode-goto)
+(define-key anaconda-mode-map (kbd "M-.") 'anaconda-mode-goto)
 (define-key anaconda-mode-map (kbd "M-,") 'anaconda-nav-pop-marker)
 
 

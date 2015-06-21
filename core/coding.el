@@ -37,9 +37,16 @@
   (set-default 'smart-tab-completion-functions-alist '())
   (global-smart-tab-mode t)
 
-  (require 'yasnippet)
-  (set-default 'yas-verbosity 1)
-  (yas-global-mode t)
+  (progn
+    (require 'yasnippet)
+    (set-default 'yas-verbosity 1)
+    (yas-global-mode t)
+    (setq yas-prompt-functions (delete 'yas-x-prompt yas-prompt-functions))
+    (global-set-key (kbd "<backtab>") #'company-yasnippet))
+
+
+
+
 
   (defvar company-mode/enable-yas t
     "Включить сниппеты во все backend'ы company")
@@ -51,8 +58,11 @@
       (append (if (consp backend)  backend (list backend))
               '(:with company-yasnippet))))
 
-  (defun msk/add-company-backend (backend)
+  (defun msk/add-company-backend-with-yas (backend)
     (add-to-list 'company-backends (msk/company-backend-with-yas backend)))
+
+  (defun msk/add-company-backend (backend)
+    (add-to-list 'company-backends backend))
 
   (setq company-backends
         (mapcar #'msk/company-backend-with-yas company-backends)))

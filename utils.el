@@ -35,3 +35,7 @@
 (defun msk/create-dir-if-not-exist (dir-path)
   (if (not (file-exists-p dir-path))
       (mkdir dir-path)))
+
+(defun msk/setenv-if-not-exist (varible value)
+  (if (not (getenv varible))
+      (setenv varible value)))
