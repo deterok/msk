@@ -36,3 +36,21 @@ Recomendation
 Read the code. Try to understand it. Change it! This is very simple!
 
 Please send me your changes. I'll be interested to see your improvements.
+
+Known issues
+------------
+#####go-mode
+If emacs launched not in terminal, godef will be not found.
+The following code should fix it, but it needs to adjust for themselves:
+```elisp
+(msk/setenv-if-not-exist "GOPATH"
+                         (msk/concat-path (file-truename "~/")
+                                          ".local/lib/go/"))
+(setenv "PATH"
+        (concat (getenv "PATH") ":"
+        (msk/concat-path (getenv "GOPATH") "bin")))
+
+(set-default 'godef-command (car (split-string
+                                  (shell-command-to-string "which godef"))))
+```
+Just add it to initi.el after `(require 'msk)`.
