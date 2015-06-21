@@ -3,6 +3,7 @@
 
 (progn
   (require 'go-mode)
+  (require 'company-go)
   (msk/add-company-backend 'company-go))
 
 
