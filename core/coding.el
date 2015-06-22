@@ -42,7 +42,7 @@
     (set-default 'yas-verbosity 1)
     (yas-global-mode t)
     (setq yas-prompt-functions (delete 'yas-x-prompt yas-prompt-functions))
-    (global-set-key (kbd "<backtab>") #'company-yasnippet))
+    (global-set-key (kbd "C-<tab>") #'company-yasnippet))
 
 
 
