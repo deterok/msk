@@ -50,7 +50,7 @@ The following code should fix it, but it needs to adjust for themselves:
         (concat (getenv "PATH") ":"
         (msk/concat-path (getenv "GOPATH") "bin")))
 
-(set-default 'godef-command (car (split-string
-                                  (shell-command-to-string "which godef"))))
+(add-to-list 'exec-path (msk/concat-path (getenv "GOPATH") "bin"))
+
 ```
 Just add it to initi.el after `(require 'msk)`.
