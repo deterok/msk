@@ -28,6 +28,14 @@
 (set-default 'mc/list-file (msk/concat-path msk-cache-dir "mc-list.el"))
 (add-hook 'prog-mode-hook #'multiple-cursors-mode)
 
+
+(defun comment-or-uncomment-line ()
+  "Закоментировать или раскоментировать текущую линию"
+  (interactive)
+  (comment-or-uncomment-region (line-beginning-position) (line-end-position)))
+
+(global-set-key (kbd "C-M-;") #'comment-or-uncomment-line)
+
 ;;Масштабная система автодополнения кода/текста
 (progn
   (require 'company)
