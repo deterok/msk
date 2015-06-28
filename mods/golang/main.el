@@ -1,5 +1,6 @@
 (msk/require-pkgs '(go-mode
                     go-company
+                    go-oracle
                     go-test))
 
 (progn
@@ -75,6 +76,8 @@
         (compile (s-concat (go-install-get-programm) pkg )))))
 
 
+;; Многие комбинации объявлены в сторонних модулях.
+;; Например  комбинации `go-oracle' привязаны в основном к \"C-c C-o\"
 (progn
   (define-key go-mode-map (kbd "C-c C-a")   'go-import-add)
   (define-key go-mode-map (kbd "C-c C-r")   'go-remove-unused-imports)
