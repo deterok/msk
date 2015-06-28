@@ -4,7 +4,12 @@
 (progn
   (require 'go-mode)
   (require 'company-go)
-  (msk/add-company-backend 'company-go))
+  (msk/add-company-backend 'company-go)
+
+
+  (add-hook 'before-save-hook (lambda ()
+                                (when (eq major-mode 'go-mode)
+                                  (gofmt)))))
 
 
 (defun go ()
