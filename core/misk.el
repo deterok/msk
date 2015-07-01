@@ -13,3 +13,7 @@
         `((".*" ,emacs-tmp-dir t)))
   (setq auto-save-list-file-prefix
         emacs-tmp-dir))
+
+;; Разрешает использовать автодополнение в ansi-term по tab
+(add-hook 'term-mode-hook (lambda()
+                            (yas-minor-mode -1)))
