@@ -39,7 +39,8 @@ Please send me your changes. I'll be interested to see your improvements.
 
 Known issues
 ------------
-#####go-mode
+####go-mode
+#####Init
 If emacs launched not in terminal, godef will be not found.
 The following code should fix it, but it needs to adjust for themselves:
 ```elisp
@@ -54,3 +55,11 @@ The following code should fix it, but it needs to adjust for themselves:
 
 ```
 Just add it to initi.el after `(require 'msk)`.
+
+#####gocode configuration
+For information read https://github.com/nsf/gocode#options
+
+Fast configuration:
+
+        $ gocode set propose-builtins true
+        $ gocode set autobuild true

@@ -5,8 +5,8 @@
 
 (progn
   (require 'go-mode)
-  (require 'company-go)
-  (require 'gotest)
+  (require 'company-go)                 ;Автодополнение с помощью company
+  (require 'gotest)                     ;Возмоность использовать утилиту go test
 
   (msk/add-company-backend 'company-go)
 
@@ -76,19 +76,20 @@
         (compile (s-concat (go-install-get-programm) pkg )))))
 
 
+;; Настраиваем горячии клавиши
 ;; Многие комбинации объявлены в сторонних модулях.
 ;; Например  комбинации `go-oracle' привязаны в основном к \"C-c C-o\"
 (progn
   (define-key go-mode-map (kbd "C-c C-a")   'go-import-add)
   (define-key go-mode-map (kbd "C-c C-r")   'go-remove-unused-imports)
-  (define-key go-mode-map (kbd "C-c C-c")   'go-run-all)
+  (define-key go-mode-map (kbd "C-c C-c")   'go-run-current-project)
   (define-key go-mode-map (kbd "C-c C-S-c") 'go-run)
   (define-key go-mode-map (kbd "C-c C-b")   'go-build-current-project)
   (define-key go-mode-map (kbd "C-c C-S-b") 'go-build)
   (define-key go-mode-map (kbd "C-c C-f")   'gofmt)
   (define-key go-mode-map (kbd "C-c C-S-f") 'go-fix-buffer)
   (define-key go-mode-map (kbd "C-c C-d")   'godoc)
-  (define-key go-mode-map (kbd "C-c i")     'go-install-package)
+  (define-key go-mode-map (kbd "C-c i")     'go-install)
   (define-key go-mode-map (kbd "C-c C-t")   'go-test-current-project)
   (define-key go-mode-map (kbd "M-.")       'godef-jump)
   (define-key go-mode-map (kbd "C-M-.")     'godef-jump-other-window)
