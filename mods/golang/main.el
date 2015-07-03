@@ -5,8 +5,8 @@
 
 (progn
   (require 'go-mode)
-  (require 'company-go)
-  (require 'gotest)
+  (require 'company-go)                 ;Автодополнение с помощью company
+  (require 'gotest)                     ;Возмоность использовать утилиту go test
 
   (msk/add-company-backend 'company-go)
 
@@ -76,6 +76,7 @@
         (compile (s-concat (go-install-get-programm) pkg )))))
 
 
+;; Настраиваем горячии клавиши
 ;; Многие комбинации объявлены в сторонних модулях.
 ;; Например  комбинации `go-oracle' привязаны в основном к \"C-c C-o\"
 (progn
