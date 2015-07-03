@@ -28,8 +28,7 @@
               (apply 'msk/load-mod
                      (if (atom mod)
                          (list mod)
-                       mod
-                       ))))
+                       mod))))
           mods-list))
 
 (defun msk/create-dir-if-not-exist (dir-path)
