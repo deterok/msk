@@ -82,8 +82,6 @@
     (add-to-list 'company-backends backend))
 
 
-  (setq company-backends
-        (mapcar #'msk/company-backend-with-yas company-backends)))
 
 
 (msk/require-pkgs 'flycheck)
