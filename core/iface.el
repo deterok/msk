@@ -35,8 +35,6 @@
   (set-default 'ido-file-history
                (msk/concat-path msk-cache-dir "ido-history.dat"))
 
-  (set-default 'recentf-save-file (msk/concat-path msk-cache-dir "recentf"))
-
   (set-default 'ido-save-directory-list-file
                (msk/concat-path msk-cache-dir "ido.last"))
 
