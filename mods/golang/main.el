@@ -92,5 +92,4 @@
   (define-key go-mode-map (kbd "C-c i")     'go-install)
   (define-key go-mode-map (kbd "C-c C-t")   'go-test-current-project)
   (define-key go-mode-map (kbd "M-.")       'godef-jump)
-  (define-key go-mode-map (kbd "C-M-.")     'godef-jump-other-window)
-  (define-key go-mode-map (kbd "C-k")       'go-kill))
+  (define-key go-mode-map (kbd "C-M-.")     'godef-jump-other-window))
