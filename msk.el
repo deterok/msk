@@ -21,16 +21,16 @@
 (defvar msk-active-packages (list)
   "Список всех модов, загруженных с помощью msk/require-pkgs")
 
-;; Создаем директорию для загружаемых файлов, вспомгательных
-;; программ и пакетных менеджеров
-(if (not (file-exists-p msk-cache-dir))
-    (mkdir msk-cache-dir))
+(defvar msk-before-init-hook nil
+  "Хук будет вызван до инициализации пакета msk")
 
-;; Загружаем настройки пакетного менеджера el-get
-(msk/load-file-from-script-dir "pkg.el")
+(defvar msk-after-init-hook nil
+  "Хук будет вызван после инициализации пакета msk")
 
 (defun msk-init()
   "Функция инициализации пакета msk"
+
+  (run-hooks 'msk-before-init-hook)
 
   ;; Создаем директорию для загружаемых файлов, вспомгательных
   ;; программ и пакетных менеджеров
@@ -42,6 +42,8 @@
 
   ;;Запуск модулей
   (msk/load-mods msk-mods-list)
+
+  (run-hooks 'msk-after-init-hook)
 
   (print "Все!  MSK запущен!")
 
