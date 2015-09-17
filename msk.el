@@ -29,12 +29,24 @@
 ;; Загружаем настройки пакетного менеджера el-get
 (msk/load-file-from-script-dir "pkg.el")
 
-;;Запуск модулей
-(msk/load-mods msk-mods-list)
+(defun msk-init()
+  "Функция инициализации пакета msk"
 
-(print "Все!  MSK запущен!")
+  ;; Создаем директорию для загружаемых файлов, вспомгательных
+  ;; программ и пакетных менеджеров
+  (if (not (file-exists-p msk-cache-dir))
+      (mkdir msk-cache-dir))
 
-;; Подчищаем за конфигуратором, переходим на буфер *scratch*
-(set-buffer "*scratch*")
-(delete-other-windows)
+  ;; Загружаем настройки пакетного менеджера el-get
+  (msk/load  (msk/concat-path msk-dir "pkg.el"))
+
+  ;;Запуск модулей
+  (msk/load-mods msk-mods-list)
+
+  (print "Все!  MSK запущен!")
+
+  ;; Подчищаем за конфигуратором, переходим на буфер *scratch*
+  (set-buffer "*scratch*")
+  (delete-other-windows))
+
 (provide 'msk)
