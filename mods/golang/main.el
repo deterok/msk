@@ -1,7 +1,8 @@
 (msk/require-pkgs '(go-mode
                     go-company
                     go-oracle
-                    go-test))
+                    go-test
+                    go-eldoc))
 
 (progn
   (require 'go-mode)
@@ -9,6 +10,8 @@
   (require 'gotest)                     ;Возмоность использовать утилиту go test
 
   (msk/add-company-backend 'company-go)
+
+  (add-hook 'go-mode-hook 'go-eldoc-setup)
 
   (add-hook 'before-save-hook (lambda ()
                                 (when (eq major-mode 'go-mode)
