@@ -1,5 +1,5 @@
-MSK Markdown support mode
-=========================
+MSK Markdown support mod
+========================
 
 Preparation
 -----------
