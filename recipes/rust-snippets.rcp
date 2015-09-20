@@ -1,0 +1,5 @@
+(:name rust-snippets
+       :description "Rust snippets for yasnippet"
+       :type github
+       :pkgname "freebroccolo/rust-snippets"
+       :features rust-snippets)
