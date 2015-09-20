@@ -1,0 +1,5 @@
+(:name racer-mode
+       :description "This package allows emacs to use Racer for Rust code completion and navigation."
+       :type github
+       :pkgname "racer-rust/emacs-racer"
+       :features racer)
