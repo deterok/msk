@@ -3,19 +3,19 @@ My Starter Kit
 MSK - starter kit for emacs with my preferences
 
 Features
--------
+--------
 - Hmm... my preference in settings :)
 - The rudiment of the simple modular system
 - Easy to install
 - Russian comments in the code...
 
 Requirements
-------
+-----------
 - Emacs-24.4
 - Git
 
 Installation
--------
+------------
 Installation is simple:
 
 1. Clone MSK git-repository in your Emacs config dir
@@ -32,34 +32,7 @@ Installation is simple:
 I am in the process of finding solutions)
 
 Recomendation
-------------
+-------------
 Read the code. Try to understand it. Change it! This is very simple!
 
 Please send me your changes. I'll be interested to see your improvements.
-
-Known issues
-------------
-####go-mode
-#####Init
-If emacs launched not in terminal, godef will be not found.
-The following code should fix it, but it needs to adjust for themselves:
-```elisp
-(msk/setenv-if-not-exist "GOPATH"
-                         (msk/concat-path (file-truename "~/")
-                                          ".local/lib/go/"))
-(setenv "PATH"
-        (concat (getenv "PATH") ":"
-        (msk/concat-path (getenv "GOPATH") "bin")))
-
-(add-to-list 'exec-path (msk/concat-path (getenv "GOPATH") "bin"))
-
-```
-Just add it to initi.el after `(require 'msk)`.
-
-#####gocode configuration
-For information read https://github.com/nsf/gocode#options
-
-Fast configuration:
-
-        $ gocode set propose-builtins true
-        $ gocode set autobuild true

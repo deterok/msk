@@ -1,8 +1,6 @@
-(msk/require-pkgs 'pretty-mode-plus)
-
-(require 'pretty-mode)
-(global-pretty-mode t)
-
+;; Зменяем некоторые обозначения в некоторых ЯП на отдельные символы
+;; Например lambda -> λ
+(global-prettify-symbols-mode t)
 
 ;; Автосохранение в директорию $TMPDIR/emacs$UID/
 (progn

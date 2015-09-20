@@ -1,7 +1,7 @@
 (print "MSK Запускается")
 (load "utils" nil t nil t)
 
-(defconst msk-version "1.2.1"
+(defconst msk-version "1.3.0"
   "Версия пакета msk")
 
 ;; Объявление стандартных путей
@@ -21,20 +21,34 @@
 (defvar msk-active-packages (list)
   "Список всех модов, загруженных с помощью msk/require-pkgs")
 
-;; Создаем директорию для загружаемых файлов, вспомгательных
-;; программ и пакетных менеджеров
-(if (not (file-exists-p msk-cache-dir))
-    (mkdir msk-cache-dir))
+(defvar msk-before-init-hook nil
+  "Хук будет вызван до инициализации пакета msk")
 
-;; Загружаем настройки пакетного менеджера el-get
-(msk/load-file-from-script-dir "pkg.el")
+(defvar msk-after-init-hook nil
+  "Хук будет вызван после инициализации пакета msk")
 
-;;Запуск модулей
-(msk/load-mods msk-mods-list)
+(defun msk-init()
+  "Функция инициализации пакета msk"
 
-(print "Все!  MSK запущен!")
+  (run-hooks 'msk-before-init-hook)
 
-;; Подчищаем за конфигуратором, переходим на буфер *scratch*
-(set-buffer "*scratch*")
-(delete-other-windows)
+  ;; Создаем директорию для загружаемых файлов, вспомгательных
+  ;; программ и пакетных менеджеров
+  (if (not (file-exists-p msk-cache-dir))
+      (mkdir msk-cache-dir))
+
+  ;; Загружаем настройки пакетного менеджера el-get
+  (msk/load  (msk/concat-path msk-dir "pkg.el"))
+
+  ;;Запуск модулей
+  (msk/load-mods msk-mods-list)
+
+  (run-hooks 'msk-after-init-hook)
+
+  (print "Все!  MSK запущен!")
+
+  ;; Подчищаем за конфигуратором, переходим на буфер *scratch*
+  (set-buffer "*scratch*")
+  (delete-other-windows))
+
 (provide 'msk)

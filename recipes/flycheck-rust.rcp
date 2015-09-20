@@ -1,0 +1,5 @@
+(:name flycheck-rust
+       :description "flycheck-rust — Flycheck for Rust"
+       :type github
+       :pkgname "flycheck/flycheck-rust"
+       :features flycheck-rust)
