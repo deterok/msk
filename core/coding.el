@@ -37,10 +37,15 @@
 ;; Поддержка мультикурсоров
 ;; Позволяет редактировать и изменять однотипные данные одновременно в
 ;; нескольких местах
-;; TODO: Добавить хоткеи для этого действия
-(require'multiple-cursors)
-(set-default 'mc/list-file (msk/concat-path msk-cache-dir "mc-list.el"))
-(add-hook 'prog-mode-hook #'multiple-cursors-mode)
+(progn
+  (require'multiple-cursors)
+  (set-default 'mc/list-file (msk/concat-path msk-cache-dir "mc-list.el"))
+  (add-hook 'prog-mode-hook #'multiple-cursors-mode)
+
+  (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+  (global-set-key (kbd "C->") 'mc/mark-next-like-this)
+  (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+  (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this))
 
 
 (defun comment-or-uncomment-line ()
