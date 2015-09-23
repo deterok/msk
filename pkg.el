@@ -8,7 +8,8 @@
        "https://raw.githubusercontent.com/dimitri/el-get/master/el-get-install.el")
     (goto-char (point-max))
     (eval-print-last-sexp)
-    (kill-buffer "*el-get bootstrap*")))
+    (kill-buffer "*el-get bootstrap*")
+    (el-get-elpa-build-local-recipes)))
 
 ;; Указываем директори для загружаемы данных и рецептов el-get
 (add-to-list 'el-get-recipe-path (msk/concat-path msk-dir "recipes"))
