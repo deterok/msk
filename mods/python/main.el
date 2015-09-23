@@ -1,4 +1,5 @@
-(msk/require-pkgs '(anaconda-mode
+(msk/require-pkgs '(pythonic
+                    anaconda-mode
                     company-anaconda
                     virtualenvwrapper))
 
