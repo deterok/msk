@@ -1,7 +1,7 @@
 (print "MSK Запускается")
 (load "utils" nil t nil t)
 
-(defconst msk-version "1.3.1"
+(defconst msk-version "1.3.2"
   "Версия пакета msk")
 
 ;; Объявление стандартных путей
