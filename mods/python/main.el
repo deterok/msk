@@ -1,4 +1,6 @@
-(msk/require-pkgs '(pythonic
+(msk/require-pkgs '(f
+                    s
+                    pythonic
                     anaconda-mode
                     company-anaconda
                     virtualenvwrapper))
@@ -27,11 +29,6 @@
  "';'.join(module_completion('''%s'''))\n"
  python-shell-completion-string-code
  "';'.join(get_ipython().Completer.all_completions('''%s'''))\n")
-
-
-;; Горячии клавиши для перехода к объявлению объекта и назад
-(define-key anaconda-mode-map (kbd "M-.") 'anaconda-mode-goto)
-(define-key anaconda-mode-map (kbd "M-,") 'anaconda-nav-pop-marker)
 
 
 (defun python-shell-send-buffer-with-main ()
