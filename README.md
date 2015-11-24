@@ -13,6 +13,7 @@ Requirements
 -----------
 - Emacs-24.4
 - Git
+- Some software for some mods (See the README for a particular mode)
 
 Installation
 ------------
@@ -35,4 +36,9 @@ Recomendation
 -------------
 Read the code. Try to understand it. Change it! This is very simple!
 
-Please send me your changes. I'll be interested to see your improvements.
+Please send me your changes. I'll be interested to see your
+improvements.
+
+See active [issues](https://github.com/deterok/msk/issues) and
+[milestones](https://github.com/deterok/msk/milestones) to monitor the
+development of the project.
