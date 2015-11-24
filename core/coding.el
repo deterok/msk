@@ -1,4 +1,4 @@
-(msk/require-pkgs '(autopair
+(msk/require-pkgs '(smartparens
                     highlight-parentheses
                     multiple-cursors
                     company
@@ -14,8 +14,8 @@
 
 
 ;; Автоматическое управление парными скобками и кавычками (Создание/Удаление)
-(require 'autopair)
-(autopair-global-mode t)
+(require 'smartparens-config)
+(smartparens-global-mode t)
 
 
 ;; Подсвечиваем парные скобки при наъождение курсора рядом с одной из них
