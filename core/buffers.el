@@ -17,11 +17,10 @@
 (setq ibuffer-saved-filter-groups
       `(("default"
          ("Emacs" (or
-                   (name . "^\\*scratch\\*$")
                    (name . "^\\*Messages\\*$")
                    (name . "^\\*Compile-Log\\*$")
                    (name . "^\\*Flycheck")))
-
+         ("Scratches" (name . "^\\*scratch*\\*"))
          ("Terminals" (mode . term-mode))
          ("ED" (filename . ,(expand-file-name user-emacs-directory)))
          ("Debug" (name . "^\\*Backtrace"))
