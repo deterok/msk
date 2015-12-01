@@ -1,3 +1,8 @@
+(msk/require-pkgs 'multi-scratch)
+
+(require 'multi-scratch)
+(setq multi-scratch-buffer-name "scratch")
+
 ;; Зменяем некоторые обозначения в некоторых ЯП на отдельные символы
 ;; Например lambda -> λ
 (global-prettify-symbols-mode t)
