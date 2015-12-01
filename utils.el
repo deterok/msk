@@ -16,9 +16,13 @@ MODULE - имя модуля, который надо загрузить.
 PATH - путь до директории, в которой следует искать моуль"
   (if (null path)
       (setq path msk-mods-dir))
-  (condition-case err
+
+  (if debug-on-error
       (msk/load (msk/concat-path (msk/concat-path path module) "main.el"))
-    (error (warn "Ошибка загрузки модуля '%s': %s" module err))))
+
+    (condition-case err
+        (msk/load (msk/concat-path (msk/concat-path path module) "main.el"))
+      (error (warn "Ошибка загрузки модуля '%s': %s" module err)))))
 
 
 (defun msk/load-file-from-script-dir(file)
