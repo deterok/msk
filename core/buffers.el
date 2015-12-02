@@ -20,7 +20,7 @@
                    (name . "^\\*Messages\\*$")
                    (name . "^\\*Compile-Log\\*$")
                    (name . "^\\*Flycheck")))
-         ("Scratches" (name . "^\\*scratch*\\*"))
+         ("Scratches" (name . "^\\*scratch"))
          ("Terminals" (mode . term-mode))
          ("ED" (filename . ,(expand-file-name user-emacs-directory)))
          ("Debug" (name . "^\\*Backtrace"))
