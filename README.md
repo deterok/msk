@@ -1,3 +1,7 @@
+WARNING
+=======
+I switched to using [Spacemacs](https://github.com/syl20bnr/spacemacs). It meets all my needs and I see no reason to continue the project.
+
 My Starter Kit
 ==============
 MSK - starter kit for emacs with my preferences
